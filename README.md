@@ -1,2 +1,2 @@
-# projectmygo.github.io
+# ProjectMyGO
 Welcome MyGO!!!!!
