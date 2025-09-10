@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开发文档 - ProjectMyGO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .step-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8fc9e3, #6bb8d9);
+            color: #fff;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+        
+        .step-image {
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+        
+        .step-tip {
+            background: rgba(143, 201, 227, 0.1);
+            border-left: 4px solid #8fc9e3;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        .step-note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+        
+        .qq-group {
+            background: rgba(25, 161, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            margin: 40px 0;
+        }
+        
+        .tutorial-nav {
+            position: sticky;
+            top: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .tutorial-nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .tutorial-nav li {
+            margin-bottom: 8px;
+        }
+        
+        .tutorial-nav a {
+            color: #8fc9e3;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .tutorial-nav a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部栏 -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-effect">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="服务器Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="docs.html">开发文档</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container-fluid mt-5 pt-5">
+        <div class="row">
+            <!-- 侧边栏 -->
+            <div class="col-md-3 sidebar glass-effect animate-slide">
+                <h5 class="mb-3">文档导航</h5>
+                <div class="tutorial-nav">
+                    <h6>服务器进入指南</h6>
+                    <ul>
+                        <li><a href="#setup-step1">1. 下载客户端整合包</a></li>
+                        <li><a href="#setup-step2">2. 安装与配置启动器</a></li>
+                        <li><a href="#setup-step3">3. LittleSkin登录配置</a></li>
+                        <li><a href="#setup-step4">4. 启动游戏与设置</a></li>
+                        <li><a href="#setup-step5">5. 添加服务器并连接</a></li>
+                    </ul>
+                    
+                    <h6 class="mt-4">服务器枪包安装教程</h6>
+                    <ul>
+                        <li><a href="#plugins-step1">1. 下载枪械包</a></li>
+                        <li><a href="#plugins-step2">2. 安装枪械包</a></li>
+                    </ul>
+                </div>
+                
+                <div class="qq-group">
+                    <h6><i class="bi bi-people-fill"></i> 官方QQ群</h6>
+                    <p class="mb-0">1022644068</p>
+                </div>
+            </div>
+
+            <!-- 主要板块 -->
+            <div class="col-md-9 main-content">
+                <div class="docs-header mb-4">
+                    <h1>开发文档</h1>
+                    <p class="lead">这里是ProjectMyGO服务器的完整文档，包含服务器进入指南和资源包安装教程。</p>
+                </div>
+                
+                <!-- 服务器进入指南 -->
+                <section id="setup" class="mb-5">
+                    <div class="docs-section-header glass-card p-4 mb-4">
+                        <h2>服务器进入指南</h2>
+                        <p>按照以下步骤完成客户端配置并加入服务器</p>
+                    </div>
+                    
+                    <div id="setup-step1" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>下载客户端整合包</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>首先，您需要从QQ群文件中下载服务器客户端整合包。</p>
+                            <img src="assets/docs/setup/1.png" class="img-fluid rounded step-image" alt="步骤1: 下载客户端整合包">
+                            <div class="step-tip">
+                                <i class="bi bi-info-circle"></i> 整合包名称: <strong>ProjectMyGO 0.1.2.zip</strong> (156.6MB)
+                            </div>
+                            <p>同时下载PCL启动器(<strong>Plain Craft Launcher.exe</strong>)或其他第三方启动器。</p>
+                        </div>
+                    </div>
+                    
+                    <div id="setup-step2" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>安装与配置启动器</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>解压下载的整合包，然后运行PCL启动器(<strong>PlainCraftLauncher.exe</strong>)。</p>
+                            <img src="assets/docs/setup/2.png" class="img-fluid rounded step-image" alt="步骤2: 安装与配置启动器">
+                            <p>启动器会自动检测游戏文件，您需要选择正确的游戏版本和配置。</p>
+                            <div class="step-note">
+                                <i class="bi bi-exclamation-triangle"></i> 首次启动可能需要一些时间下载依赖文件，请耐心等待。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="setup-step3" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>LittleSkin登录配置</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>在启动器中选择"LittleSkin登录"选项。</p>
+                            <img src="assets/docs/setup/3.png" class="img-fluid rounded step-image" alt="步骤3: LittleSkin登录配置">
+                            <p>如果您还没有LittleSkin账号，需要先访问<a href="https://littleskin.cn" target="_blank">littleskin.cn</a>注册账号并创建角色。</p>
+                            <img src="assets/docs/setup/4.png" class="img-fluid rounded step-image" alt="LittleSkin网站">
+                            <p>登录后，您可以选择或上传喜欢的皮肤。</p>
+                            <img src="assets/docs/setup/7.png" class="img-fluid rounded step-image" alt="选择皮肤">
+                            <div class="step-tip">
+                                <i class="bi bi-lightbulb"></i> 如果没有皮肤，可以点击皮肤库搜索并使用喜欢的皮肤。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="setup-step4" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">4</span>
+                            <h3>启动游戏与设置</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>完成登录配置后，点击"启动游戏"。</p>
+                            <img src="assets/docs/setup/8.png" class="img-fluid rounded step-image" alt="步骤4: 启动游戏">
+                            <p>第一次启动可能需要下载一些文件，请耐心等待。</p>
+                            <img src="assets/docs/setup/3.png" class="img-fluid rounded step-image" alt="第一次启动等待">
+                            <div class="step-note">
+                                <i class="bi bi-exclamation-triangle"></i> 首次启动后，建议完全退出游戏并重新启动以确保所有资源正确加载。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="setup-step5" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">5</span>
+                            <h3>添加服务器并连接</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>进入游戏后，转到"多人游戏"选项。</p>
+                            <p>如果服务器没有自动显示，点击"添加服务器"。</p>
+                            <img src="assets/docs/setup/9.png" class="img-fluid rounded step-image" alt="添加服务器">
+                            <p>输入服务器信息：</p>
+                            <ul>
+                                <li>服务器名称: <strong>ProjectMyGO</strong></li>
+                                <li>服务器地址: <strong>110.42.38.247:25565</strong></li>
+                            </ul>
+                            <img src="assets/docs/setup/10.png" class="img-fluid rounded step-image" alt="输入服务器信息">
+                            <p>保存后，选择服务器并点击"加入服务器"。</p>
+                            <img src="assets/docs/setup/11.png" class="img-fluid rounded step-image" alt="加入服务器">
+                            <p>耐心等待连接完成，即可进入服务器开始游戏！</p>
+                            <img src="assets/docs/setup/12.png" class="img-fluid rounded step-image" alt="连接服务器">
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="section-divider"></div>
+                
+                <!-- 服务器枪包安装教程 -->
+                <section id="plugins" class="mb-5">
+                    <div class="docs-section-header glass-card p-4 mb-4">
+                        <h2>服务器枪包安装教程</h2>
+                        <p>安装服务器专用资源包以获得最佳游戏体验</p>
+                    </div>
+                    
+                    <div id="plugins-step1" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>下载枪械包</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>从QQ群文件中下载最新的服务器枪械包。</p>
+                            <img src="assets/docs/plugins/1.png" class="img-fluid rounded step-image" alt="步骤1: 下载枪械包">
+                            <p>枪械包名称: <strong>枪械包（小睦自用版）.zip</strong> (270.7MB)</p>
+                            <div class="step-note">
+                                <i class="bi bi-exclamation-triangle"></i> 请注意枪械包可能有更新，请确保下载最新版本。
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="plugins-step2" class="step-card">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>安装枪械包</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>解压下载的枪械包，找到游戏目录下的<strong>tacz</strong>文件夹。</p>
+                            <img src="assets/docs/plugins/2.png" class="img-fluid rounded step-image" alt="找到tacz文件夹">
+                            <p>将枪械包内的所有文件(不需要解压内部的压缩包)放入tacz文件夹中。</p>
+                            <img src="assets/docs/plugins/3.png" class="img-fluid rounded step-image" alt="放入tacz文件夹">
+                            <div class="step-tip">
+                                <i class="bi bi-lightbulb"></i> 通常情况下，tacz文件夹路径为: <code>游戏版本目录/tacz/</code>
+                            </div>
+                            <p>完成文件复制后，启动游戏即可自动加载枪械包。</p>
+                            <div class="step-note">
+                                <i class="bi bi-exclamation-triangle"></i> 如果游戏已运行，需要重启游戏才能使枪械包生效。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 常见问题部分 -->
+                <section id="faq" class="glass-card p-4">
+                    <h2>常见问题解答</h2>
+                    <hr>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    启动游戏时出现错误或崩溃怎么办？
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    请确保您的电脑已安装最新版本的Java，并且显卡驱动程序是最新的。如果问题仍然存在，请尝试分配更多内存给Minecraft。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    连接服务器时显示"认证失败"怎么办？
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    请检查您的LittleSkin登录状态，确保已正确配置并登录。如果问题持续，请尝试重新登录LittleSkin。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    枪械包安装后没有效果怎么办？
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    请确认您已将文件放置在正确的tacz文件夹中，并且文件没有嵌套在子文件夹内。重启游戏后如果问题仍然存在，请检查游戏日志获取更多信息。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部栏 -->
+    <footer class="footer py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 TGW Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

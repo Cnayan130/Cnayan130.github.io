@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectMyGO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- 头部栏 -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-effect">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="服务器Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#intro">简介</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">团队</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#screenshots">截图</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#announcements">公告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="docs.html">开发文档</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container-fluid mt-5 pt-5">
+        <div class="row">
+            <!-- 侧边栏 -->
+            <div class="col-md-3 sidebar glass-effect animate-slide order-md-1 order-2">
+                <h5 class="mb-3">快速链接</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#intro" class="text-decoration-none">服务器简介</a></li>
+                    <li><a href="#team" class="text-decoration-none">运营团队</a></li>
+                    <li><a href="#screenshots" class="text-decoration-none">游戏截图</a></li>
+                    <li><a href="#announcements" class="text-decoration-none">最新公告</a></li>
+                    <li><a href="docs.html" class="text-decoration-none">开发文档</a></li>
+                    <li><a href="donate.html" class="text-decoration-none">支持我们</a></li>
+                </ul>
+                <hr>
+                <div class="server-status">
+                    <h6>服务器状态</h6>
+                    <div class="d-flex align-items-center">
+                        <div class="status-indicator online"></div>
+                        <span class="ms-2">在线 (未知/20)</span>
+                    </div>
+                    <p class="small mt-2">版本: 1.20.4</p>
+                    <p class="small">IP: 110.42.38.247:25565</p>
+
+                </div>
+                <div class="qq-group">
+                    <h6><i class="bi bi-people-fill"></i> 官方QQ群</h6>
+                    <p class="mb-0">1022644068</p>
+                </div>
+            </div>
+
+            <!-- 主要板块 -->
+            <div class="col-md-9 main-content order-md-2 order-1">
+                <!-- 服务器简介 -->
+                <section id="intro" class="glass-card mb-4 animate-fade">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2>服务器简介</h2>
+                        <span class="badge bg-primary">Alpha 内测</span>
+                    </div>
+                    <hr>
+
+                    <div class="intro-content">
+                        <p class="lead">欢迎来到ProjectMyGO服务器，各位迷子们！</p>
+                        <p>服务器现在已经全面上线进入新阶段Alpha内测版本，正在积极扩张中！</p>
+                        <p>各位迷子们，一起创造属于我们的梦想世界吧！</p>
+                        <p class="fw-bold">即使迷茫，也要前进！</p>
+
+                        <hr>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-gear-fill me-2"></i>
+                                    <h5>技术特点</h5>
+                                </div>
+                                <p>服务器现阶段为1.20.4版本，使用Forge+Mod+插件的形式运行，内置了大量实用模组和插件，力求为大家提供一个稳定、丰富、有趣的游戏环境。</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-people-fill me-2"></i>
+                                    <h5>运营团队</h5>
+                                </div>
+                                <p>服务器由TGW Group运营维护，感谢离耀、Mortis小睦等运营人员的辛勤付出！服务器目前处于内测阶段，欢迎大家积极反馈问题和建议！</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="team" class="glass-card mb-4">
+        <h2>运营团队</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="team-member card h-100">
+                    <div class="role-badge">负责人</div>
+                    <div class="card-body text-center">
+                        <div class="member-avatar mb-3">
+                            <img src="assets/avatar/cnayan.jpg" alt="离耀 - 偷莫偷摸零">
+                        </div>
+                        <h5 class="card-title">离耀 - 偷莫偷摸零</h5>
+                        <h6 class="card-subtitle mb-2">服务器主要负责人</h6>
+                        <p class="card-text">负责服务器维护和技术支持。经验丰富，技术精湛，确保服务器稳定运行，解决各种技术难题。</p>
+                        <div class="social-links">
+                            <a href="https://qm.qq.com/q/gzjXF7S6Uo" class="qq-link" data-bs-toggle="tooltip" data-bs-placement="top" title="QQ联系：2149720295">
+                                <i class="bi bi-chat"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="team-member card h-100">
+                    <div class="role-badge">管理员</div>
+                    <div class="card-body text-center">
+                        <div class="member-avatar mb-3">
+                            <img src="assets/avatar/mortis.jpg" alt="Mortis小睦">
+                        </div>
+                        <h5 class="card-title">Mortis小睦</h5>
+                        <h6 class="card-subtitle mb-2">服务器管理员</h6>
+                        <p class="card-text">管理玩家互动，处理举报，促进和谐社区。热情友善，公正严明，致力于创造良好的游戏环境。</p>
+                        <div class="social-links">
+                            <a href="https://qm.qq.com/q/EAzUSmHfmE" class="qq-link" data-bs-toggle="tooltip" data-bs-placement="top" title="QQ联系：853937042">
+                                <i class="bi bi-chat"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                <!-- 服务器截图 -->
+                <section id="screenshots" class="glass-card mb-4 animate-fade">
+                    <h2>服务器截图</h2>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="screenshot-item">
+                                <img src="assets/screenshots/1.png" class="img-fluid rounded screenshot-img" alt="截图1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="梦想城东区港口，繁忙的贸易中心！">
+                                <div class="screenshot-caption mt-2">
+                                    <p class="small mb-0">梦想城东区港口</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="screenshot-item">
+                                <img src="assets/screenshots/2.png" class="img-fluid rounded screenshot-img" alt="截图2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="TGW 集团古典豪宅，典雅大气！">
+                                <div class="screenshot-caption mt-2">
+                                    <p class="small mb-0">TGW 集团古典豪宅</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="screenshot-item">
+                                <img src="assets/screenshots/3.png" class="img-fluid rounded screenshot-img" alt="截图3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="梦想城一号公寓，现代简约风格！">
+                                <div class="screenshot-caption mt-2">
+                                    <p class="small mb-0">梦想城一号公寓</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 公告 -->
+                <section id="announcements" class="glass-card mb-4 animate-fade">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2 class="mb-0">最新公告 | 更新日志</h2>
+                        <a href="#" class="btn btn-sm btn-outline-light">查看全部</a>
+                    </div>
+                    <hr>
+                    <div class="announcement-item">
+                        <div class="d-flex align-items-start">
+                            <div class="announcement-date me-3">
+                                <div class="date-badge">
+                                    <span class="day">01</span>
+                                    <span class="month">09月</span>
+                                    <span class="year">2025</span>
+                                </div>
+                            </div>
+                            <div class="announcement-content">
+                                <h4>服务器更新至0.1.3版本</h4>
+                                <p>加入了瓦尔基里、热力、沉浸工程、瓦尔基里机械动力联动、方块建模等模组，优化了部分游戏体验。</p>
+                                <p>本次更新决定扩大测试，让更多的迷子们参与进来！</p>
+                                <div class="update-tags">
+                                    <span class="badge bg-info me-1">新增内容</span>
+                                    <span class="badge bg-success me-1">优化</span>
+                                    <span class="badge bg-warning">测试扩大</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="announcement-item">
+                        <div class="d-flex align-items-start">
+                            <div class="announcement-date me-3">
+                                <div class="date-badge">
+                                    <span class="day">28</span>
+                                    <span class="month">08月</span>
+                                    <span class="year">2025</span>
+                                </div>
+                            </div>
+                            <div class="announcement-content">
+                                <h4>服务器首次内测开启</h4>
+                                <p>经过数周的准备工作，ProjectMyGO服务器终于迎来了首次内测！感谢所有开发人员和测试人员的辛勤付出。</p>
+                                <div class="update-tags">
+                                    <span class="badge bg-primary me-1">里程碑</span>
+                                    <span class="badge bg-success">内测开启</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部栏 -->
+     <footer class="footer py-3">
+        <div class="container text-center">
+            <p>&copy; 2025 TGW Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

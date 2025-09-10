@@ -1,0 +1,778 @@
+/* CSS 变量：便于维护和创新 */
+:root {
+    --primary-color: #ffffff;
+    --hover-color: #8fc9e3;
+    --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.3);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --font-family: '思源黑体 Bold', Montserrat, sans-serif;
+}
+
+/* 暗黑模式支持（创新：自动适配系统主题） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #f0f0f0;
+        --hover-color: #a0d8f0;
+    }
+}
+
+/* 整体背景和字体优化 */
+body {
+    background-image: url('../assets/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--primary-color);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.5);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* 防止水平滚动 */
+}
+
+/* 标题样式优化 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* 图片优化：移除阴影，只保留缩放动画 */
+#intro img,
+.main-content img {
+    height: 400px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform var(--transition);
+    border-radius: 8px;
+}
+
+#intro img:hover,
+.main-content img:hover {
+    transform: scale(1.05); /* 只保留放大效果 */
+}
+
+/* Logo 和导航链接优化 */
+.navbar-brand, .nav-link, .glass-card h2, .glass-card h5 {
+    color: var(--primary-color);
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.nav-link {
+    font-weight: bolder;
+    color: var(--primary-color);
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    position: relative; /* 为创新动画准备 */
+    overflow: hidden; /* 隐藏溢出 */
+}
+
+.nav-link::before { /* 创新：波浪式悬浮效果 */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(143, 201, 227, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link:hover {
+    font-weight: bolder;
+    color: var(--hover-color);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* 毛玻璃/亚克力效果优化：添加脉冲动画 */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: pulse 2s infinite; /* 创新：轻微脉冲，提升活力 */
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+}
+
+.glass-effect:hover {
+    animation-play-state: paused; /* 悬浮时暂停动画 */
+}
+
+/* 侧边栏优化：Flexbox + 创新间距 */
+.sidebar {
+    height: fit-content;
+    padding: 20px;
+    position: sticky;
+    top: 100px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar a {
+    color: var(--hover-color);
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    color: var(--primary-color);
+    background: rgba(143, 201, 227, 0.2);
+    padding-left: 1rem;
+    transform: scale(1.02); /* 创新：轻微缩放 */
+}
+
+/* 主要内容卡片优化 */
+.glass-card {
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card:hover {
+    transform: scale(1.02) translateY(-5px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* 底部栏优化：渐变 + 居中 */
+footer {
+    color: #fff;
+    padding: 2rem 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+/* 动画类优化：添加延迟和创新 */
+.animate-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-slide {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease 0.2s;
+}
+
+.animate-fade.visible,
+.animate-slide.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* 整体布局：Grid 优化 */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 大屏适配（创新：>1200px 时扩展布局） */
+@media (min-width: 1200px) {
+    .main-container {
+        grid-template-columns: 250px 1fr;
+        gap: 3rem;
+    }
+    
+    .glass-card {
+        padding: 30px;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .sidebar {
+        margin-top: 20px;
+        position: relative;
+        top: 0;
+        order: 2;
+    }
+    
+    .glass-effect {
+        backdrop-filter: blur(5px);
+        padding: 15px;
+    }
+    
+    #intro img,
+    .main-content img {
+        height: 250px;
+    }
+    
+    .nav-link {
+        padding: 0.75rem;
+    }
+    
+    /* 移动端创新：增大触摸区 */
+    .sidebar a {
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+/* 额外创新：自定义按钮霓虹效果（如果页面使用） */
+.btn-custom {
+    background: linear-gradient(135deg, var(--hover-color), #6bb8d9);
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    transition: var(--transition);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(143, 201, 227, 0.5); /* 霓虹辉光 */
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(143, 201, 227, 0.4), 0 0 20px rgba(143, 201, 227, 0.8); /* 增强辉光 */
+}
+
+/* 加载字体优化（创新：预加载思源黑体） */
+@font-face {
+    font-family: '思源黑体 Bold';
+    src: url('../fonts/SourceHanSansBold.woff2') format('woff2'); /* 假设字体文件路径 */
+    font-weight: bold;
+    font-display: swap; /* 优化加载 */
+}
+
+/* 新增样式 - 毛玻璃效果应用于各种元素 */
+.server-status {
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.server-status:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.status-indicator.online {
+    background-color: #28a745;
+}
+
+.status-indicator.offline {
+    background-color: #dc3545;
+}
+
+.status-indicator.idle {
+    background-color: #ffc107;
+}
+
+.team-member {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            color: var(--primary-color);
+            height: 100%;
+            position: relative;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(106, 90, 205, 0.4);
+        }
+        
+        .member-avatar {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 140px;
+            height: 140px;
+            position: relative;
+            margin-top: 1.5rem;
+        }
+        
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .team-member:hover .member-avatar img {
+            transform: scale(1.05);
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 25px rgba(106, 90, 205, 0.4);
+        }
+        
+        .member-avatar::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-color), #9b59b6);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.4;
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .member-avatar::before {
+            opacity: 0.7;
+            filter: blur(15px);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .card-title {
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            color: white;
+        }
+        
+        .card-subtitle {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            min-height: 80px;
+        }
+        
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary-color);
+            transition: var(--transition);
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            color: white;
+        }
+        
+        .role-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .member-avatar {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .member-avatar::before {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        /* QQ图标特殊样式 */
+        .social-links a.qq-link {
+            background: rgba(18, 183, 245, 0.1);
+            color: var(--qq-color);
+        }
+        
+        .social-links a.qq-link:hover {
+            background: var(--qq-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+.screenshot-item {
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.screenshot-item:hover {
+    transform: scale(1.03);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.date-badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 70px;
+    transition: var(--transition);
+}
+
+.date-badge:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.date-badge .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.date-badge .month, .date-badge .year {
+    font-size: 0.8rem;
+    display: block;
+}
+
+.update-tags {
+    margin-top: 10px;
+}
+
+.update-tags .badge {
+    transition: var(--transition);
+}
+
+.update-tags .badge:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(-2px);
+}
+
+/* 文档页面样式 */
+.docs-toc {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.toc-section {
+    margin-bottom: 15px;
+}
+
+.toc-header {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.step-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--hover-color);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: var(--transition);
+}
+
+.step-number:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: scale(1.1);
+}
+
+.step-tip {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(143, 201, 227, 0.1);
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.step-tip:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.step-tip i {
+    color: #ffc107;
+    margin-right: 10px;
+}
+
+.step-image {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.step-image:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 捐助页面样式 */
+.qr-card {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.qr-card:hover {
+    transform: translateY(-5px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.qr-image {
+    max-width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.qr-image:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.benefit-card {
+    padding: 25px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--hover-color);
+    transition: var(--transition);
+}
+
+.benefit-icon:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--hover-color);
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.price:hover {
+    transform: scale(1.05);
+}
+
+.transparency-icon {
+    font-size: 1.8rem;
+    color: var(--hover-color);
+    transition: var(--transition);
+}
+
+.transparency-icon:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.donation-stats {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.donation-stats:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 步骤卡片样式 */
+.step-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(-3px);
+}
+
+/* 教程导航样式 */
+.tutorial-nav {
+    position: sticky;
+    top: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.tutorial-nav:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* QQ群样式 */
+.qq-group {
+    background: rgba(25, 161, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    transition: var(--transition);
+}
+
+.qq-group:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .step-number {
+        margin-bottom: 10px;
+    }
+    
+    .benefit-card {
+        margin-bottom: 20px;
+    }
+    
+    .date-badge {
+        min-width: 60px;
+    }
+    
+    .date-badge .day {
+        font-size: 1.2rem;
+    }
+    
+    /* 移动端减少模糊效果以提高性能 */
+    .glass-effect,
+    .glass-card:hover,
+    .benefit-card:hover,
+    .qr-card:hover,
+    .step-card:hover,
+    .team-member:hover,
+    .tutorial-nav:hover,
+    .qq-group:hover {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
